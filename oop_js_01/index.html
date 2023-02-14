@@ -32,9 +32,16 @@
             this.weight     = weight; 
             this.color      = color; 
         }
+
+        setName(newName){
+            this.name = newName;
+        }
      }
      const mazda = new Car("CarName", "Rx-80", 985, 'red'); 
+     mazda.setName('Mazda');
      console.log(mazda);
+     
+
 
     </script>
 </body>
