@@ -39,8 +39,45 @@
      }
      const mazda = new Car("CarName", "Rx-80", 985, 'red'); 
      mazda.setName('Mazda');
-     console.log(mazda);
-     
+    //  console.log(mazda);
+
+    //  class, methods and constructor
+     class User{
+        constructor (firstName, lastName, mobile, date_of_birth, yearlyIncome){
+            this.firstName = firstName; 
+            this.lastName  = lastName; 
+            this.mobile    = mobile; 
+            this.birthday = new Date(date_of_birth); 
+            this.yearlyIncome  = yearlyIncome; 
+        }
+
+        getFullName = () => {
+            return this.firstName+' ' + this.lastName
+        }
+
+        getAge = () => {
+            const diff = Date.now() - this.birthday.getTime(); 
+        }
+
+        getTaxAmount = () => {
+            let textAmount = 0; 
+            if(this.yearlyIncome < 200000){
+                textAmount = this.yearlyIncome*0.25; 
+            }else if(this.yearlyIncome > 250000 && this.yearlyIncome > 280000){
+                textAmount = this.yearlyIncome*0.35; 
+            }else if(this.yearlyIncome > 300000){
+                textAmount = this.yearlyIncome*0.45;
+            }else {
+                textAmount = 0;
+            }
+            return 0; 
+        }
+     }
+
+  
+
+     const user = new User('Shaikat', 'Shuvro', '017415454', '2022-04-02', 500000); 
+     console.log(user.getFullName());
 
 
     </script>
